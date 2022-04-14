@@ -8,10 +8,28 @@
 <title>Show</title>
 </head>
 <body>
+<h1>All Books</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Language</th>
+            <th>Number of Pages</th>
+        </tr>
+    </thead>
+    <tbody>
+         <!-- loop over all the books to show the details as in the wireframe! -->
+         <c:forEach var="book" items="${books}">
+         <tr>
+         	<td><c:out value="${book.id}" /></td>
+         	<td><c:out value="${book.title}" /></td>
+         	<td><c:out value="${book.language}" /></td>
+         	<td><c:out value="${book.numberOfPages}" /></td>
+         </tr>
+         </c:forEach>
+    </tbody>
+</table>
 
-<h1><c:out value="${book.title}"/></h1>
-<h3>Description: <c:out value="${book.description}"/></h3>
-<h3>Language: <c:out value="${book.language}"/></h3>
-<h3>Number of Pages: <c:out value="${book.numberOfPages}"/></h3>
 </body>
 </html>
